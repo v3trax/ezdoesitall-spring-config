@@ -5,7 +5,7 @@ spring:
 spring:
   profiles: development
   datasource:
-    url: jdbc:mysql://localhost:8889/user_auth_service
+    url: jdbc:mysql://localhost:8889/user_auth_service?useSSL=false
     username: root
     password: root
     dbcp:
