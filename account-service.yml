@@ -9,7 +9,7 @@ authserver:
 ---
 spring:
   profiles: development
- datasource:
+  datasource:
     url: jdbc:mysql://localhost:8889/account_service
     username: root
     password: root
@@ -24,19 +24,18 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL5Dialect
-    oauth2:
-      sso:
-        home:
-          secure: false
-          path: /,/**/*.html
-      client:
-        accessTokenUri: http://${authserver.hostname}:${authserver.port}/${authserver.contextPath}/oauth/token
-        userAuthorizationUri: http://${authserver.hostname}:${authserver.port}/${authserver.contextPath}/oauth/authorize
-        clientId: client
-        clientSecret: secret
-      resource:
-        userInfoUri: http://${authserver.hostname}:${authserver.port}/${authserver.contextPath}/me
-        preferTokenInfo: false
+
+security:
+  enable-csrf: false
+  oauth2:
+    resource:
+      userInfoUri: http://localhost:8443/uaa/me
+    client:
+      accessTokenUri: http://localhost:8443/uaa/oauth/token
+      userAuthorizationUri: http://localhost:8443/uaa/oauth/authorize
+      clientId: iOSApp
+      clientSecret: EZDoesItAll
+
 eureka:
   instance:
     prefer-ip-address: true
