@@ -39,7 +39,6 @@ security:
 eureka:
   instance:
     prefer-ip-address: true
-    non-secure-port-enabled: true
     securePortEnabled: false
   client:
     registerWithEureka: true
