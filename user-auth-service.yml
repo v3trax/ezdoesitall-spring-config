@@ -27,7 +27,8 @@ eureka:
   instance:
     prefer-ip-address: true
     non-secure-port-enabled: true
-    non-secure-port: 8443
+    non-secure-port: 8181
+    securePortEnabled: false
   client:
     registerWithEureka: true
     fetchRegistry: true
