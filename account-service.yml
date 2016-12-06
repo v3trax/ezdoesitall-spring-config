@@ -29,10 +29,10 @@ security:
   enable-csrf: false
   oauth2:
     resource:
-      userInfoUri: http://localhost:8443/uaa/me
+      userInfoUri: http://localhost:7471/uaa/me
     client:
-      accessTokenUri: http://localhost:8443/uaa/oauth/token
-      userAuthorizationUri: http://localhost:8443/uaa/oauth/authorize
+      accessTokenUri: http://localhost:7471/uaa/oauth/token
+      userAuthorizationUri: http://localhost:7471/uaa/oauth/authorize
       clientId: iOSApp
       clientSecret: EZDoesItAll
 
